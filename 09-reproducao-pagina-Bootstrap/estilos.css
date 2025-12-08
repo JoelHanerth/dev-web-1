@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.topbar { 
+    background: #fff; 
+    font-size: 13px; 
+}
+
+.topbar a.globo { color: #007bff; }
+.topbar a.g1 { color: #d62d20; }
+.topbar a.ge { color: #28a745; }
+.topbar a.gshow { color: #fd7e14; }
+.topbar a.globoplay { color: #e83e8c; }
+.topbar a.assine { color: #343a40; }
+
+.header { 
+    background: #d62d20; 
+}
+
+.header .logo { 
+    font-size: 32px; 
+    font-weight: 700; 
+}
+
+.nav-links a { 
+    color: #d62d20; 
+    font-weight: 600; 
+    font-size: 15px; 
+}
+
+.nav-links a.nav-special { 
+    color: #000; 
+}
+
+.article-title { 
+    font-size: 32px; 
+    font-weight: 700; 
+}
+
+.article-sub { 
+    font-size: 18px; 
+    color: #666; 
+}
+
+figure figcaption { 
+    font-size: 12px; 
+    color: #777; 
+}
+
+.read-list a { 
+    color: #d62d20; 
+    font-weight: 600; 
+}
+
+.botao-social { 
+    width: 34px; 
+    height: 34px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: #fff; 
+    border-radius: 50%; 
+    font-size: 16px;
+}
+
+.botao-social.facebook { background: #3b5998; }
+.botao-social.twitter { background: #1da1f2; }
+.botao-social.whatsapp { background: #25d366; }
+.botao-social.telegram { background: #0088cc; }
+.botao-social.linkedin { background: #0a66c2; }
+
+.newsletter-btn { 
+    border: 2px solid #d62d20; 
+    color: #d62d20; 
+    font-weight: 600; 
+}
+
+.newsletter-btn:hover { 
+    background: #d62d20; 
+    color: #fff; 
+}
