@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <h1>Consulta de Clima</h1>
+
+    <div class="container">
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" placeholder="Digite a cidade">
+
+        <button onclick="buscarClima()">Buscar</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        async function buscarClima() {
+            const cidade = document.getElementById("cidade").value;
+            const resultado = document.getElementById("resultado");
+
+            if (!cidade) {
+                resultado.innerHTML = "<p class='erro'>Digite uma cidade.</p>";
+                return;
+            }
+
+            resultado.innerHTML = "<p>Buscando...</p>";
+
+            try {
+                // Buscar coordenadas
+                const geoResp = await fetch(
+                    `https://geocoding-api.open-meteo.com/v1/search?name=${cidade}&count=1`
+                );
+                const geoData = await geoResp.json();
+
+                if (!geoData.results || geoData.results.length === 0) {
+                    resultado.innerHTML = "<p class='erro'>Cidade não encontrada.</p>";
+                    return;
+                }
+
+                const { latitude, longitude, name, country } = geoData.results[0];
+
+                // Buscar clima
+                const climaResp = await fetch(
+                    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=precipitation_probability`
+                );
+                const climaData = await climaResp.json();
+
+                const temperatura = climaData.current_weather.temperature;
+                const vento = climaData.current_weather.windspeed;
+                const probChuva = climaData.hourly.precipitation_probability[0];
+
+                resultado.innerHTML = `
+                    <p><strong>${name}, ${country}</strong></p>
+                    <p>Temperatura: ${temperatura}°C</p>
+                    <p>Probabilidade de chuva: ${probChuva}%</p>
+                    <p>Vento: ${vento} km/h</p>
+                `;
+            } catch (error) {
+                resultado.innerHTML = "<p class='erro'>Erro ao buscar clima.</p>";
+            }
+        }
+    </script>
+
+</body>
+</html>

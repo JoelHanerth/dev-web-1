@@ -1,0 +1,83 @@
+/* Variáveis globais */
+:root {
+    --font-body: 'Roboto', sans-serif;
+    --space-md: 20px;
+    --gap-30: 30px;
+    --color-link: cornflowerblue;
+    --color-muted: #7d7d7d;
+    --container-max: 900px;
+    --content-max: 560px;
+}
+
+
+:root > body {
+    font-family: var(--font-body);
+    margin: 0;
+}
+
+.container:not(:empty) {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    margin: 0 auto;
+    max-width: var(--container-max);
+    padding: var(--space-md);
+    gap: var(--gap-30);
+}
+
+
+.container :where(*) {
+    box-sizing: border-box;
+}
+.container * {
+    margin: 0;
+}
+
+.container main {
+    max-width: var(--content-max);
+}
+
+.container h1 {
+    text-align: center;
+}
+
+:is(.container img, nav > img) {
+    max-width: 100%;
+    height: auto;
+}
+
+.container a {
+    color: var(--color-link);
+}
+
+.meta-dados:not(:empty) {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.legenda-imagem p {
+    display: flex;
+    flex-direction: column;
+    gap: 300px;
+    font-size: 14px;
+}
+
+.texto-cinza:not(:empty) {
+    color: var(--color-muted);
+}
+
+nav > #barra-superior {
+    width: 100%;
+}
+
+.nota:not(:empty) {
+    padding: 5px;
+}
+
+.gap-30:not(:empty) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-30);
+}

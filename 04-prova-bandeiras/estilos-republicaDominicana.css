@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.republicaBranco{
+    background-color: white;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.republicaMeio{
+    width: 100%;
+    height: 40%;
+    display: flex;
+}
+
+.republicaMeio .parteazul{
+    background-color: rgb(10, 10, 129);
+    height: 100%;
+    width: 45%;
+}
+
+.republicaMeio .partebranca{
+    background-color: white;
+    height: 100%;
+    width: 10%;
+}
+
+.republicaMeio .partevermelha{
+    background-color: rgb(187, 9, 9);
+    height: 100%;
+    width: 45%;
+}
+
+.republicaBranco img{
+    height: 100%;
+}

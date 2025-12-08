@@ -1,0 +1,16 @@
+body {
+    background: #f3f3f3;
+}
+
+.card-jogo {
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.card-jogo:hover {
+    transform: scale(1.03);
+}
+
+h2 {
+    font-weight: 600;
+}

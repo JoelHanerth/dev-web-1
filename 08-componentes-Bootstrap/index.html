@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">GameHub</a>
+
+            <button class="btn btn-outline-light ms-auto" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+                Menu
+            </button>
+        </div>
+    </nav>
+
+    <!-- MENU OFFCANVAS -->
+    <div class="offcanvas offcanvas-start" id="menuLateral">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Navegação</h5>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Escolha uma opção:</p>
+
+            <button class="btn btn-dark w-100 mb-2" onclick="abrirSobre()">
+                Sobre o site
+            </button>
+        </div>
+    </div>
+
+    <div class="container my-4">
+
+        <h2 class="text-center mb-4">Catálogo de Jogos</h2>
+
+        <!-- GRID DE CARDS -->
+        <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card card-jogo" onclick="abrirModal('God of War (2018)', 'Kratos e Atreus enfrentam os deuses nórdicos.')">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg" 
+                    class="card-img-top" alt="God of War">
+                <div class="card-body">
+                    <h5 class="card-title">God of War</h5>
+                    <p class="card-text">A aventura épica de Kratos.</p>
+                    <button class="btn btn-primary">Ver mais</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-jogo" onclick="abrirModal('Red Dead Redemption 2', 'Explore o Velho Oeste em uma narrativa envolvente.')">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg"
+                    class="card-img-top" alt="Red Dead Redemption 2">
+                <div class="card-body">
+                    <h5 class="card-title">Red Dead Redemption 2</h5>
+                    <p class="card-text">Um dos jogos mais imersivos já criados.</p>
+                    <button class="btn btn-primary">Ver mais</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-jogo" onclick="abrirModal('Cyberpunk 2077', 'Ação futurista em Night City.')">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg"
+                    class="card-img-top" alt="Cyberpunk 2077">
+                <div class="card-body">
+                    <h5 class="card-title">Cyberpunk 2077</h5>
+                    <p class="card-text">Um RPG futurista cheio de estilo.</p>
+                    <button class="btn btn-primary">Ver mais</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+        <!-- ACCORDION -->
+        <div class="accordion mt-5" id="acc1">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#desc">
+                        O que é o GameHub?
+                    </button>
+                </h2>
+                <div id="desc" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        Um site simples criado para treinar Bootstrap e organização de layout.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mt-2">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#tecnologias">
+                        Tecnologias usadas
+                    </button>
+                </h2>
+                <div id="tecnologias" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        HTML, CSS, Bootstrap e JavaScript básico.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL-->
+    <div class="modal fade" id="modalInfo">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Informações</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <h4 id="modalTitulo">Título</h4>
+                    <p id="modalTexto">Descrição aqui.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
